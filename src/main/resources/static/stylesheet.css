@@ -8,7 +8,15 @@
     height: 50px;
 }
 
-
+footer {
+    background-color: #ccc4be;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+}
 
 body {
     min-height: 100vh;
