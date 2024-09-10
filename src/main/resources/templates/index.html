@@ -10,14 +10,17 @@
 <body>
 
 <header>
-    <div class="container custom-bg">
+    <div class="container-fluid custom-bg d-flex justify-content-center align-items-center">
         <h1 class="text-center">Lise Martinsen</h1>
     </div>
 </header>
 
-<div class="container mt-4">
-<!-- SKapa upp kort dynamiskt-->
+<div class="container-fluid mt-4">
+    <!-- SKapa upp kort dynamiskt-->
     <div class="row">
+        <div class="col-12 text-center">
+            <h4>Projects</h4>
+        </div>
         <div th:each="card : ${cards}" class="col-md-4">
             <div class="card mb-4">
                 <h5 class="card-title" th:text="${card.title}">Title</h5>
@@ -26,12 +29,16 @@
         </div>
     </div>
 </div>
+
 <footer>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12 text-center">
-                <a href="https://www.linkedin.com/in/lisemartinsen1">
+                <a href="https://www.linkedin.com/in/lisemartinsen1" target="_blank" rel="noopener noreferrer">
                     <img src="https://img.icons8.com/dusk/512/linkedin--v1.png" class="icons" alt="linkedin icon"/>
+                </a>
+                <a href="https://github.com/lisemartinsen1" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.icons8.com/plasticine/400/github.png" class="icons" alt="github"/>
                 </a>
                 <a href="mailto:lise.martinsen@yh.nackademin.se">
                     <img src="https://img.icons8.com/dusk/512/apple-mail.png" class="icons" alt="mail icon"/>

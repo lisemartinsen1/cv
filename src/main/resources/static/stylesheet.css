@@ -1,10 +1,21 @@
 
-
 .custom-bg {
     background-color: #ccc4be;
+    height: 15vh;
 }
 
 .icons {
     height: 50px;
 }
 
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
