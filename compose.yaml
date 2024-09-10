@@ -10,18 +10,18 @@ services:
     ports:
       - '5432:5432'
 
-  app:
-    build: .
-    depends_on:
-      - postgres
-    environment:
-      DB_URL: ${DB_URL}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-    ports:
-      - '8080:8080'
-    networks:
-      - my-network
+ # app:
+ #   build: .
+ #   depends_on:
+  #    - postgres
+   # environment:
+     # DB_URL: ${DB_URL}
+     # DB_USER: ${DB_USER}
+     # DB_PASSWORD: ${DB_PASSWORD}
+   # ports:
+   #   - '8080:8080'
+  #  networks:
+   #   - my-network
 
 networks:
   my-network:
