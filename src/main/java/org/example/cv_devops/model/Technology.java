@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,7 +18,7 @@ public class Technology {
 
     @Id
     @GeneratedValue
-    private int id;
+    private UUID id;
     private String technologyName;
 
     @ManyToMany(mappedBy = "technologies")
