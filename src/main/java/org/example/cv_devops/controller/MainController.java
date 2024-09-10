@@ -11,8 +11,4 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/navbar")
-    public String navbar() {
-        return "fragments/navbar";
-    }
 }
