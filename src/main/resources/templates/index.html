@@ -10,16 +10,16 @@
 <body>
 
 <header>
-    <div class="container-fluid custom-bg d-flex justify-content-center align-items-center">
-        <h1 class="text-center">Lise Martinsen</h1>
+    <div class="container-fluid custom-bg d-flex flex-column justify-content-center align-items-center">
+        <h1 class="text-center">H E L L O ^^</h1>
+        <p>I'm Lise Martinsen. Java Student.</p>
     </div>
 </header>
 
 <div class="container-fluid mt-4">
-    <!-- SKapa upp kort dynamiskt-->
     <div class="row">
         <div class="col-12 text-center">
-            <h4>Projects</h4>
+            <h4>P R O J E C T S</h4>
         </div>
         <div th:each="project : ${projects}" class="col-12 col-md-6 col-lg-4">
             <div class="card mb-4">
@@ -40,16 +40,52 @@
 <footer>
     <div class="container-fluid">
         <div class="row">
+            <div class="col-12 text-center p-5">
+                <h1>T O U C H BASE</h1>
+            </div>
             <div class="col-12 text-center">
                 <a href="https://www.linkedin.com/in/lisemartinsen1" target="_blank" rel="noopener noreferrer">
-                    <img src="https://img.icons8.com/dusk/512/linkedin--v1.png" class="icons" alt="linkedin icon"/>
+                    <img src="https://img.icons8.com/ios-filled/500/linkedin.png" class="icons" alt="linkedin icon"/>
                 </a>
                 <a href="https://github.com/lisemartinsen1" target="_blank" rel="noopener noreferrer">
-                    <img src="https://img.icons8.com/plasticine/400/github.png" class="icons" alt="github"/>
+                    <img src="https://img.icons8.com/ios-filled/500/github.png" class="icons" alt="github"/>
                 </a>
                 <a href="mailto:lise.martinsen@yh.nackademin.se">
-                    <img src="https://img.icons8.com/dusk/512/apple-mail.png" class="icons" alt="mail icon"/>
+                    <img src="https://img.icons8.com/ios-filled/500/mail.png" class="icons" alt="mail icon"/>
                 </a>
+            </div>
+        </div>
+
+        <div class="container-fluid p-5">
+            <div class="row">
+
+                <div class="col-md-6 p-5 text-center">
+                    <h5><em>Let's get in contact!</em></h5>
+                </div>
+
+                <div class="col-md-6 p-5">
+                    <form action="#" method="post">
+                        <div class="row">
+                            <div class="col-12 mb-3 d-flex justify-content-center">
+                                <label for="name"></label>
+                                <input type="text" id="name" name="name" class="input-col" placeholder="Name*" required>
+                            </div>
+                            <div class="col-12 mb-3 d-flex justify-content-center">
+                                <label for="email"></label>
+                                <input type="email" id="email" name="email" class="input-col" placeholder="Email*"
+                                       required>
+                            </div>
+                            <div class="col-12 mb-3 d-flex justify-content-center">
+                                <label for="message"></label>
+                                <textarea id="message" name="message" rows="6" placeholder="Message*"
+                                          required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

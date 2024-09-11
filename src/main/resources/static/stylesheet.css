@@ -1,21 +1,24 @@
 
-.custom-bg {
-    background-color: #ccc4be;
-    height: 15vh;
+
+
+.container-fluid.custom-bg {
+    height: 100vh;
+    width: 100%;
+    background-color: #f0f0f0;
 }
+
 
 .icons {
     height: 50px;
 }
 
 footer {
-    background-color: #ccc4be;
-    height: 10vh;
+    background-color: #f0f0f0;
+    height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 0 15px;
 }
 
 body {
@@ -27,3 +30,35 @@ body {
 footer {
     margin-top: auto;
 }
+
+form input,
+form textarea {
+    background-color: #000;
+    color: #fff;
+    border: #fff;
+    width: 100%;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #ffffff;
+    font-style: italic;
+}
+
+form button {
+    background-color: #000;
+    color: #fff;
+    border: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #101010;
+}
+
+.input-col {
+    height:30px;
+}
+
