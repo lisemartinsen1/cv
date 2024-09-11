@@ -17,10 +17,10 @@
 </header>
 
 <div class="container-fluid p-5">
-    <div class="text-center">
+    <div class="text-center pt-5 pb-5">
         <h2>T E C H <strong>Expertise</strong></h2>
     </div>
-    <div class="d-flex align-items-center justify-content-center">
+    <div class="d-flex align-items-center justify-content-center pb-5">
         <div class="logos">
             <div class="logos-slide">
                 <img src="https://img.icons8.com/ios/500/java-coffee-cup-logo--v1.png" class="icon"
@@ -62,22 +62,24 @@
     </div>
 </div>
 
+<div class="container p-5"></div>
+
 <div class="container-fluid p-5">
     <div class="wrapper">
         <div class="text-center mb-3 project-container p-2">
-            <h2>P R O J E C T S</h2>
+            <h2 class="project-text pt-4">P R O J E C T S</h2>
         </div>
         <div class="container-fluid project-div">
             <div class="row p-5">
                 <div th:each="project : ${projects}" class="col-12 col-md-6 col-lg-4">
-                    <div class="card mb-4">
+                    <div class="card mb-4 p-4">
                         <div class="card-body">
-                            <h5 class="card-title" th:text="${project.title}">Title</h5>
+                            <h5 class="card-title pb-2" th:text="${project.title}">Title</h5>
                             <p class="card-text" th:text="${project.description}">Description</p>
                             <p><strong>Technologies</strong></p>
-                            <ul>
-                                <li th:each="tech : ${project.technologies}" th:text="${tech.technologyName}"></li>
-                            </ul>
+                            <p class="technologies">
+                                <span th:each="tech, iterStat : ${project.technologies}" th:text="${tech.technologyName} + (iterStat.hasNext ? ' * ' : '')"></span>
+                            </p>
                             <a th:href="${project.githubLink}" target="_blank" class="stretched-link"></a>
                         </div>
                     </div>
