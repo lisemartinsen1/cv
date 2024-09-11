@@ -23,57 +23,72 @@ public class BeanInitializer implements CommandLineRunner {
     @Override
     public void run(String...args) {
 
-        Technology t1 = Technology.builder()
+        Technology java = Technology.builder()
                 .technologyName("Java")
                 .build();
-        Technology t2 = Technology.builder()
+        Technology springBoot = Technology.builder()
                 .technologyName("Spring Boot")
                 .build();
-        Technology t3 = Technology.builder()
+        Technology functionalProgramming = Technology.builder()
+                .technologyName("Functional Programming")
+                .build();
+        Technology springSecurity = Technology.builder()
+                .technologyName("Spring Security")
+                .build();
+        Technology html = Technology.builder()
                 .technologyName("HTML")
                 .build();
-        Technology t4 = Technology.builder()
+        Technology css = Technology.builder()
                 .technologyName("CSS")
                 .build();
-        Technology t5 = Technology.builder()
+        Technology js = Technology.builder()
                 .technologyName("JS")
                 .build();
-        Technology t6 = Technology.builder()
+        Technology restAPI = Technology.builder()
+                .technologyName("Rest API")
+                .build();
+        Technology sql = Technology.builder()
                 .technologyName("SQL")
                 .build();
-        Technology t7 = Technology.builder()
+        Technology python = Technology.builder()
                 .technologyName("Python")
                 .build();
-        Technology t8 = Technology.builder()
+        Technology flask = Technology.builder()
                 .technologyName("Flask")
                 .build();
 
-        technologyRepo.saveAll(Arrays.asList(t1, t2, t3, t4, t5, t6, t7, t8));
+        technologyRepo.saveAll(Arrays.asList(java, springBoot, functionalProgramming, springSecurity, html, css, js, restAPI, sql, python, flask));
 
         Project p1 = Project.builder()
                 .title("Shoe Shop")
                 .description("A project to manage shoe sales.")
-                .technologies(Arrays.asList(t1, t2))
+                .technologies(Arrays.asList(java, sql, functionalProgramming))
+                .githubLink("https://github.com/lisemartinsen1/ShoeShop")
                 .build();
         Project p2 = Project.builder()
                 .title("Flask Application")
                 .description("Focus on security, hash algorithms and how to crack passwords")
-                .technologies(Arrays.asList(t7, t8))
+                .technologies(Arrays.asList(python, flask))
+                .githubLink("https://github.com/lisemartinsen1/python_hash_project")
                 .build();
         Project p3 = Project.builder()
-                .title("Spring Application")
+                .title("Spring Security Application")
                 .description("Focus on security, hash algorithms and how to crack passwords")
-                .technologies(Arrays.asList(t1, t2))
+                .technologies(Arrays.asList(java, springBoot))
+                .githubLink("https://github.com/lisemartinsen1/ItSec-Ind")
                 .build();
         Project p4 = Project.builder()
-                .title("Flask Application")
-                .description("Focus on security, hash algorithms and how to crack passwords")
-                .technologies(Arrays.asList(t7, t8))
+                .title("Webshop")
+                .description("A webshop with functional shopping cart.")
+                .technologies(Arrays.asList(html, css, js, restAPI))
+                .githubLink("https://github.com/lisemartinsen1/Webbshop_VG")
                 .build();
+
         Project p5 = Project.builder()
-                .title("Flask Application")
-                .description("Focus on security, hash algorithms and how to crack passwords")
-                .technologies(Arrays.asList(t7, t8))
+                .title("Booking System")
+                .description("A booking system for a hotel.")
+                .technologies(Arrays.asList(java, springBoot, springSecurity, restAPI, sql))
+                .githubLink("https://github.com/Jatteliten/backend_projektarbete")
                 .build();
 
         projectRepo.saveAll(Arrays.asList(p1, p2, p3, p4, p5));

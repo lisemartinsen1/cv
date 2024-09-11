@@ -25,4 +25,5 @@ public class Project {
     joinColumns = @JoinColumn(name = "project_id"),
     inverseJoinColumns = @JoinColumn(name = "technology_id"))
     private List<Technology> technologies;
+    private String githubLink;
 }

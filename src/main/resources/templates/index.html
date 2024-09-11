@@ -21,7 +21,7 @@
         <div class="col-12 text-center">
             <h4>Projects</h4>
         </div>
-        <div th:each="project : ${projects}" class="col-md-4">
+        <div th:each="project : ${projects}" class="col-12 col-md-6 col-lg-4">
             <div class="card mb-4">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${project.title}">Title</h5>
@@ -30,6 +30,7 @@
                     <ul>
                         <li th:each="tech : ${project.technologies}" th:text="${tech.technologyName}"></li>
                     </ul>
+                    <a th:href="${project.githubLink}" target="_blank" class="stretched-link"></a>
                 </div>
             </div>
         </div>
