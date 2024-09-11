@@ -55,6 +55,10 @@ body {
     margin-top: -100px;
 }
 
+.card:hover {
+    background-color: #f8f7f7;
+}
+
 
 footer {
     margin-top: auto;
