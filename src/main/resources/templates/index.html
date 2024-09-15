@@ -182,6 +182,19 @@
             });
         });
     });
+
+    let observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target)
+            }
+        });
+    }, { rootMargin: "-500px 0px" })
+
+    document.querySelectorAll('.icons').forEach(icon => {
+        observer.observe(icon)
+    });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
