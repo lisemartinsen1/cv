@@ -17,7 +17,7 @@ import java.util.UUID;
 public class Technology {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String technologyName;
 
