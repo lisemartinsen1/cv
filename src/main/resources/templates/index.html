@@ -79,7 +79,7 @@
                             <p class="card-text" th:text="${project.description}">Description</p>
                             <p><strong>Technologies</strong></p>
                             <p class="technologies">
-                                <span th:each="tech, iterStat : ${project.technologies}"
+                                <span th:each="tech, iterStat : ${project.miniTechnologies}"
                                       th:text="${tech.technologyName} + (iterStat.hasNext ? ' * ' : '')"></span>
                             </p>
                             <a th:href="${project.githubLink}" target="_blank" class="stretched-link"></a>
