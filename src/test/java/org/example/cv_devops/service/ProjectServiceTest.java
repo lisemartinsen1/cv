@@ -60,7 +60,7 @@ public class ProjectServiceTest {
                 .title("Project 2")
                 .description("Description 2")
                 .technologies(List.of(tech1))
-                .githubLink("http://github.com/project2")
+                .githubLink("https://github.com/project2")
                 .build();
     }
 
