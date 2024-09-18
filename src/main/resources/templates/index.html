@@ -5,7 +5,7 @@
     <title>Index</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link th:href="@{/stylesheet.css}" rel="stylesheet">
-    <link rel="icon" href="/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 </head>
 <body>
@@ -81,7 +81,8 @@
                             <p class="technologies">
                                 <span th:each="tech, iterStat : ${project.miniTechnologies}">
                                     <span th:text="${tech.technologyName}"></span>
-                                     <span th:if="${iterStat.index < project.miniTechnologies.size() - 1}" th:text="' &#8226; '"></span>
+                                     <span th:if="${iterStat.index < project.miniTechnologies.size() - 1}"
+                                           th:text="' &#8226; '"></span>
                                 </span>
                             </p>
                             <a th:href="${project.githubLink}" target="_blank" class="stretched-link"></a>
@@ -98,7 +99,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 text-center p-5">
-                <h2 class="pt-3">T O U C H BASE</h2>
+                <h2 class="pt-1">T O U C H BASE</h2>
             </div>
             <div class="col-12 text-center">
                 <a href="https://www.linkedin.com/in/lisemartinsen1" target="_blank" rel="noopener noreferrer">
@@ -120,11 +121,12 @@
                     <h4><em>Let's get in contact!</em></h4>
                 </div>
 
-
                 <div class="col-md-6 p-5">
-                    <div id="success-message" class="col-md-6 p-5 text-center" style="display:none;">
-                        <h5>Your message has been sent successfully!</h5>
+
+                    <div id="feedback-message" class="p-2 text-center" style="display:none;">
+                        <h5 id="feedback-message-text"></h5>
                     </div>
+
                     <div id="form-section">
                         <form id="contact-form">
                             <div class="row">
@@ -174,8 +176,10 @@
                 url: '/sendContactForm',
                 type: 'POST',
                 data: $(this).serialize(),
-                success: function () {
-                    $('#success-message').show();
+                dataType: 'json',
+                success: function (response) {
+                    $('#feedback-message-text').text(response.message);
+                    $('#feedback-message').show();
                     $('#contact-form')[0].reset();
                 },
                 error: function (xhr, status, error) {

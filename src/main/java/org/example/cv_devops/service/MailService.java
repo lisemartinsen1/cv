@@ -21,13 +21,18 @@ public class MailService {
         this.mailSender = mailSender;
     }
 
-    public void sendMail(String name, String emailAddress, String subject, String message) {
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setFrom(personalAddress);
-        mailMessage.setTo(personalAddress);
-        mailMessage.setSubject("Contact form - " + subject);
-        mailMessage.setText("From: " + name + "\nEmail: " + emailAddress + "\nSubject: " + subject + "\nMessage: " + message);
-
-        mailSender.send(mailMessage);
+    public boolean sendMail(String name, String emailAddress, String subject, String message) {
+        try {
+            SimpleMailMessage mailMessage = new SimpleMailMessage();
+            mailMessage.setFrom(personalAddress);
+            mailMessage.setTo(personalAddress);
+            mailMessage.setSubject("Contact form - " + subject);
+            mailMessage.setText("From: " + name + "\nEmail: " + emailAddress + "\nSubject: " + subject + "\nMessage: " + message);
+            mailSender.send(mailMessage);
+            return true;
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
     }
 }
