@@ -74,7 +74,7 @@ public class BeanInitializer implements CommandLineRunner {
         Project p3 = Project.builder()
                 .title("Spring Security Application")
                 .description("Focus on security, hash algorithms and how to crack passwords")
-                .technologies(Arrays.asList(java, springBoot))
+                .technologies(Arrays.asList(java, springSecurity, springBoot))
                 .githubLink("https://github.com/lisemartinsen1/ItSec-Ind")
                 .build();
         Project p4 = Project.builder()
@@ -83,7 +83,6 @@ public class BeanInitializer implements CommandLineRunner {
                 .technologies(Arrays.asList(html, css, js, restAPI))
                 .githubLink("https://github.com/lisemartinsen1/Webbshop_VG")
                 .build();
-
         Project p5 = Project.builder()
                 .title("Booking System")
                 .description("A booking system for a hotel.")
