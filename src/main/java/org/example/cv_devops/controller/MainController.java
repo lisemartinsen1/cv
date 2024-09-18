@@ -17,7 +17,7 @@ public class MainController {
         this.projectService = projectService;
     }
 
-    @GetMapping("/index")
+    @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("projects", projectService.getAllProjects());
         return "index";
