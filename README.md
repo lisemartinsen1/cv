@@ -7,7 +7,8 @@ it is not intended for real-world use, as this is a hobby project and not a prof
 
 ## Live Demo
 
-[Visit the live demo here](https://cv-app-oqgw.onrender.com/)
+<a href="https://cv-app-oqgw.onrender.com/" target="_blank">Visit the live demo here</a>
+
 
 ## Features
 
