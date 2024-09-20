@@ -7,7 +7,7 @@ it is not intended for real-world use, as this is a hobby project and not a prof
 
 ## Live Demo
 
-<a href="https://cv-app-oqgw.onrender.com/" target="_blank">Visit the live demo here</a>
+[Visit the live demo here](https://cv-app-oqgw.onrender.com/)
 
 
 ## Features
@@ -23,7 +23,7 @@ it is not intended for real-world use, as this is a hobby project and not a prof
 ## Tech Stack
 
 - **Backend**: Java, Spring Boot (with DTO architecture)
-- **Frontend**: Thymeleaf, HTML/CSS
+- **Frontend**: Thymeleaf, HTML/CSS, Bootstrap, jQuery 
 - **Database**: PostgreSQL (Hosted on Render)
 - **Containerization**: Docker
 - **Deployment**: Render (Web Service + Database)
