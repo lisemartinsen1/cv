@@ -34,6 +34,8 @@ dependencies {
     implementation("io.github.cdimascio:java-dotenv:5.2.2")
     implementation("org.postgresql:postgresql:42.7.3")
 
+    testImplementation("com.h2database:h2")
+
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.projectlombok:lombok")
