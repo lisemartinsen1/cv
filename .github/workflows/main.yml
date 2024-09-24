@@ -1,0 +1,57 @@
+name: CV DevOps
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: '17'
+
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle
+
+      - name: Run tests
+        run: ./gradlew clean test
+
+  build_and_push_docker:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build and Push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          image: lisemartinsen/cv-app
+          tags: latest
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+  deploy_to_render:
+    needs: build_and_push_docker
+    runs-on: ubuntu-latest
+    steps:
+       - name: Deploy to Render
+         uses: johnbeynon/render-deploy-action@v0.0.8
+         with:
+           api_key: ${{ secrets.RENDER_API_KEY }}       
+           service_id: ${{ secrets.RENDER_SERVICE_ID }}
