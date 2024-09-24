@@ -46,8 +46,11 @@ jobs:
         with:
           image: lisemartinsen/cv-app
           tags: latest
+          registry: docker.io
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+          dockerfile: Dockerfile
+          pushImage: true
 
   deploy_to_render:
     needs: build_and_push_docker
