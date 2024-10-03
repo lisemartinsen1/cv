@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,11 +29,7 @@ public class MailController {
         boolean mailSent = mailService.sendMail(name, email, subject, message);
         Map<String, String> response = new HashMap<>();
 
-        if (mailSent) {
-            response.put("message", "Your message has been sent successfully!");
-        } else {
-            response.put("message", "Something went wrong, please try again later.");
-        }
+        response.put("message", mailSent ? "Your message has been sent successfully!" : "Something went wrong, please try again later.");
         return ResponseEntity.ok(response);
     }
 

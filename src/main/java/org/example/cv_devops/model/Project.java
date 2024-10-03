@@ -20,10 +20,13 @@ public class Project {
     private UUID id;
     private String title;
     private String description;
+
     @ManyToMany
     @JoinTable(name = "project_technology",
     joinColumns = @JoinColumn(name = "project_id"),
     inverseJoinColumns = @JoinColumn(name = "technology_id"))
     private List<Technology> technologies;
+
     private String githubLink;
+
 }

@@ -6,8 +6,8 @@ import org.example.cv_devops.repository.ProjectRepository;
 import org.example.cv_devops.repository.TechnologyRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
 import java.util.Arrays;
+
 
 @Component
 public class BeanInitializer implements CommandLineRunner {
@@ -21,7 +21,7 @@ public class BeanInitializer implements CommandLineRunner {
     }
 
     @Override
-    public void run(String...args) {
+    public void run(String... args) {
 
         Technology java = Technology.builder()
                 .technologyName("Java")

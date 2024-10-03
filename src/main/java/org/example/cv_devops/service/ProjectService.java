@@ -7,9 +7,9 @@ import org.example.cv_devops.model.Technology;
 import org.example.cv_devops.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
+
 
 @Service
 public class ProjectService {
