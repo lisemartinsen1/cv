@@ -22,33 +22,33 @@ public class MailServiceTest {
     @InjectMocks
     private MailService mailService;
 
-     @BeforeEach
+    @BeforeEach
     void setUp() {
-         MockitoAnnotations.openMocks(this);
-     }
+        MockitoAnnotations.openMocks(this);
+    }
 
-     @Test
+    @Test
     void testSendMail() {
-         String personalAddress = "test@example.com";
-         String name = "Jane Doe";
-         String emailAddress = "janedoe@example.com";
-         String subject = "Test Subject";
-         String message = "This is a test message";
+        String personalAddress = "test@example.com";
+        String name = "Jane Doe";
+        String emailAddress = "janedoe@example.com";
+        String subject = "Test Subject";
+        String message = "This is a test message";
 
-         mailService.setPersonalAddress(personalAddress);
-         mailService.sendMail(name, emailAddress, subject, message);
+        mailService.setPersonalAddress(personalAddress);
+        mailService.sendMail(name, emailAddress, subject, message);
 
-         ArgumentCaptor<SimpleMailMessage> mailMessageCaptor = ArgumentCaptor.forClass(SimpleMailMessage.class);
-         verify(mailSender).send(mailMessageCaptor.capture());
-         SimpleMailMessage sentMessage = mailMessageCaptor.getValue();
+        ArgumentCaptor<SimpleMailMessage> mailMessageCaptor = ArgumentCaptor.forClass(SimpleMailMessage.class);
+        verify(mailSender).send(mailMessageCaptor.capture());
+        SimpleMailMessage sentMessage = mailMessageCaptor.getValue();
 
-         assertEquals(personalAddress, sentMessage.getFrom());
-         assertEquals(personalAddress, Objects.requireNonNull(sentMessage.getTo())[0]);
-         assertEquals("Contact form - " + subject, sentMessage.getSubject());
-         assertEquals(
-                 "From: " + name + "\nEmail: " + emailAddress + "\nSubject: " + subject + "\nMessage: " + message,
-                 sentMessage.getText()
-         );
+        assertEquals(personalAddress, sentMessage.getFrom());
+        assertEquals(personalAddress, Objects.requireNonNull(sentMessage.getTo())[0]);
+        assertEquals("Contact form - " + subject, sentMessage.getSubject());
+        assertEquals(
+                "From: " + name + "\nEmail: " + emailAddress + "\nSubject: " + subject + "\nMessage: " + message,
+                sentMessage.getText()
+        );
 
-     }
+    }
 }
